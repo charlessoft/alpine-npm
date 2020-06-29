@@ -1,6 +1,6 @@
 -include env_make
 
-ALPINE_VER ?= 3.8
+ALPINE_VER ?= 3.11.2
 NODE_VERSION ?= 3.6
 # NODE_VERSION ?= 3.6.5
 
@@ -33,6 +33,7 @@ default: build
 
 build:
 	docker build -t $(REPO):$(TAG) \
+		--build-arg ALPINE_VER=$(ALPINE_VER) \
 		--build-arg PYTHON_DEV=$(PYTHON_DEV) \
 		--build-arg NODE_VERSION=$(NODE_VERSION) \
 		./

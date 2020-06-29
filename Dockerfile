@@ -3,21 +3,20 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
+#FROM charlessoft/alpine:${ALPINE_VER}
+FROM charlessoft/alpine:3.11.2
+
 ARG ALPINE_VER
 ARG NODE_VERSION
-FROM charlessoft/alpine:${ALPINE_VER}
-
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
 
 ENV NODE_VERSION 0.0.0
 
-RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
-
 ENV NODE_VERSION 14.4.0
 
+RUN apk add curl dpkg 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
     amd64) ARCH='x64';; \
