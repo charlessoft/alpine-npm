@@ -4,9 +4,8 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 ARG ALPINE_VER
-ARG PYTHON_VERSION
 ARG NODE_VERSION
-FROM charlessoft/alpine-python:${PYTHON_VERSION}
+FROM charlessoft/alpine:${ALPINE_VER}
 
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH

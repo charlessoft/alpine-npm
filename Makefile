@@ -3,12 +3,11 @@
 ALPINE_VER ?= 3.8
 NODE_VERSION ?= 3.6
 # NODE_VERSION ?= 3.6.5
-PYTHON_VERSION ?= 3.6.5
 
 NODE_VERSION ?=14.4.0
 
-REPO = charlessoft/alpine-python-npm
-NAME = alpine-python-npm-$(NODE_VERSION)
+REPO = charlessoft/alpine-npm
+NAME = alpine-npm-$(NODE_VERSION)
 
 ifneq ($(STABILITY_TAG),)
     ifneq ($(TAG),latest)
@@ -34,7 +33,6 @@ default: build
 
 build:
 	docker build -t $(REPO):$(TAG) \
-		--build-arg PYTHON_VERSION=$(PYTHON_VERSION) \
 		--build-arg PYTHON_DEV=$(PYTHON_DEV) \
 		--build-arg NODE_VERSION=$(NODE_VERSION) \
 		./
