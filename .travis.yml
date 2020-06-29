@@ -5,7 +5,7 @@ services:
 
 env:
   matrix:
-  - ALPINE_VER=3.11 PYTHON_VERSION=3.6 TAGS=14.4.0,latest
+  - ALPINE_VER=3.11 NODE_VERSION=14.4.0 TAGS=14.4.0,latest
 
 script:
 - make 
