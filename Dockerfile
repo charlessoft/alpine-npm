@@ -3,10 +3,11 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
+ARG ALPINE_VER
 FROM charlessoft/alpine:${ALPINE_VER}
 # FROM charlessoft/alpine:3.11.2
 
-ARG ALPINE_VER
+
 ARG NODE_VERSION
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
