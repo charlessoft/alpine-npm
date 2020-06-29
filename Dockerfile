@@ -3,8 +3,8 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-#FROM charlessoft/alpine:${ALPINE_VER}
-FROM charlessoft/alpine:3.11.2
+FROM charlessoft/alpine:${ALPINE_VER}
+# FROM charlessoft/alpine:3.11.2
 
 ARG ALPINE_VER
 ARG NODE_VERSION
